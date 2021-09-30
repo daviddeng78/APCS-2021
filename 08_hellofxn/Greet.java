@@ -17,6 +17,6 @@ public class Greet
 	
 	public static void greet(String name)
 	{
-		System.out.println("Why, hello there, " + String + ". How do you do?")
+		System.out.println("Why, hello there, " + String + ". How do you do?");
 	}
 }
