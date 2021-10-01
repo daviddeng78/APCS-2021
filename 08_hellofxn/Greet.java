@@ -1,11 +1,11 @@
 public class Greet 
 {
 	/**DISCOVERIES
-	 *
+	 *Method parameters must include the data type of the inputs it will take.
 	 */
 
 	/**UNRESOLVED QUESTIONS
-	 *
+	 *No unresolved questions.
 	 */
 	public static void main(String[] args)
 	{
