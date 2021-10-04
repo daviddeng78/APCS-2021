@@ -1,5 +1,5 @@
 /**
- *David Deng
+ *Jelly: David Deng, Lea Kwok, Jacklyn Chen, Nameless, Gunter
  *APCS
  *HW10 -- Refactor Big Sib One / Utilizing Methods To Return A Certain Output
  *2021-10-04

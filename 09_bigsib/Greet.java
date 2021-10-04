@@ -1,7 +1,7 @@
 /**
- *Jelly: David Deng, Lea Kwok, Jacklyn Chen, Nameless
+ *Jelly: David Deng, Lea Kwok, Jacklyn Chen, Nameless, Gunter
  *APCS
- *HW 09 - - What Are BigSibs Good For? / Connecting Methods Across Files, String Concatenation
+ *HW09 -- What Are BigSibs Good For? / Connecting Methods Across Files, String Concatenation
  *2021-10-01
  *
  *
