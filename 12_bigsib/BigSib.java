@@ -15,7 +15,7 @@
 
 public class BigSib
 {
-	public String msg;
+	private String msg;
 
 	public void setHelloMsg(String msg)
 	{
