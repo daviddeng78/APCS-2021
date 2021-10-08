@@ -16,12 +16,7 @@ public class BigSib
 {
 	private String msg;
 
-	public BigSib()
-	{
-		this.msg = "Word up";
-	}
-
-	public void setHelloMsg(String msg)
+	public BigSib(msg)
 	{
 		this.msg = msg;
 	}
