@@ -1,30 +1,30 @@
-/**
- *Quad Puffs: Yat Long Chan, David Deng, Samantha Hua, Lindsay Phung
- *APCS
- *HW18 -- CPA-One / Transferring UML Diagrams Into Code and Reinforcing Past Concepts
- *2021-10-14
- *
- *
- *DISCOS
- *UML diagrams are very useful.
- *
- *QCCs
- *Unclear about what purpose "static" serves.
- *
- *Team Quad Puffs' Latest and Greatest Q2 Response: We know that Java provides a default constructor because when we initialized variables without explicitly stating a constructor, the program still ran without error.
- *Team Quad Puffs' Latest and Greatest Q3 Response: Create a method that returns said object and expects String. If there is no error, it means Java converted the object to a String.
- */
+/*
+Quad Puffs -- David Deng / Yat long Chan / Samantha Hua / Lindsay Phung
+APCS
+HW18 -- CPA-One / codified the UML diagram <BankAccount>
+2021-10-14
 
-public class BankAccount
-{
+DISCO
+- UML diagrams are very useful.
+QCC
+- 
+
+Q2: How do you know BEFORE you wrote your own constructor, that Java provides one for you?
+
+A2: An instance of a class can still be initialized even if it does not contain a constructor. This means that Java provides a blank constructor if one is not declared.
+
+Q3: Describe a test to determine whether Java provides a means of outping a STRING REPRESENTATION of an OBJECT?
+
+A3: Make a method with a String as the return type and return the object inside said method. If the file is compiled without error, it means that Java has provided a string representation of the object. 
+*/
+
+public class BankAccount {
 	private String holderName;
 	private String password;
-	private short PIN;
+	private int PIN;
 	private int accNum;
 	private float balance;
-
-	public BankAccount(String n, String p, short pin, int accNumber, float b)
-	{
+	public BankAccount(String n, String p, int pin, int accNumber, float b) {
 		setName(n);
 		setPass(p);
 		setPIN(pin);
@@ -32,29 +32,19 @@ public class BankAccount
 		setBalance(b);
 
 	}
-
-	private void setName (String name)
-	{
+	private void setName (String name) {
 		holderName = name;
 	}
-
-	private void setPass (String pass)
-	{
+	private void setPass (String pass) {
 		password = pass;
 	}
-
-	private void setPIN (short p)
-	{
+	private void setPIN (int p) {
 		PIN = p;
 	}
-
-	private void setAccNum (int num)
-	{
+	private void setAccNum (int num) {
 		accNum = num;
 	}
-
-	private void setBalance (float bal)
-	{
+	private void setBalance (float bal) {
 		balance = bal;
 	}
 
@@ -66,23 +56,48 @@ public class BankAccount
 		System.out.println("Balance: " + balance);
 	}
 
-	public void deposit(float deposit) {
+	public void deposit(float deposit, int aNum, int pin) {
+		if (aNum != accNum && pin != PIN){
+			System.out. println("Wrong Account Number and PIN");
+		}
+		else if (pin != PIN){
+			System.out.println("Wrong PIN");
+		}
+		else if (aNum != accNum){
+			System.out. println("Wrong Account Number");
+		}
+		else {
 		balance += deposit;
 		System.out.println("Your deposit was successful!");
 		System.out.println("Your new balance is: $" + balance);
+		}
 	}
 
-	public void withdraw(float withdrawal) {
+	public void withdraw(float withdrawal,  int aNum, int pin) {
+		if (aNum != accNum && pin != PIN){
+			System.out. println("Wrong Account Number and PIN");
+		}
+		else if (pin != PIN){
+			System.out.println("Wrong PIN");
+		}
+		else if (aNum != accNum){
+			System.out. println("Wrong Account Number");
+		}
+		else {
 		balance -= withdrawal;
 		System.out.println("Your withdrawal was successful!");
 		System.out.println("Your new balance is: $" + balance);
+		}
 	}
 
 	public static void main(String[] args) {
-		BankAccount joseph = new BankAccount("joseph", "password", (short) 1234, 123456789, 1000000);
+		BankAccount joseph = new BankAccount("joseph","password", 1234, 123456789, 1000000);
 		joseph.printInfo();
-		joseph.deposit(1000000);
-		joseph.withdraw(1);
+		joseph.deposit(1000000, 123456789, 1234);
+		joseph.withdraw(1, 123456789, 1234);
+		joseph.deposit(1000000, 123456789, 1233); //Wrong PIN
+		joseph.withdraw(1, 123456783, 1232); // Wrong PIN and accNum
+		joseph.deposit(1000000, 123456729, 1234); //Wrong accNum
 	}
 
 }
