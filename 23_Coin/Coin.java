@@ -1,5 +1,5 @@
 /**
- *David Deng
+ *TNPG: DIY (David Deng, Yat Long Chan)
  *APCS
  *HW23 -- What Does Equality Look Like? / Comparing Variables from Different Objects
  *2021-10-22
