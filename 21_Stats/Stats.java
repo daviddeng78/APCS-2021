@@ -1,4 +1,3 @@
-
 /*
    Quad Puffs -- David Deng / Yat long Chan / Samantha Hua / Lindsay Phung
    APCS
