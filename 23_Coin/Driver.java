@@ -1,15 +1,15 @@
-/***
-    driver for class Coin
-
-    ~~~ SUGGESTED WORKFLOW: ~~~
-    1. Compile this file and run. Note anything notable.
-    2. Move the "TOP" line down, so that it is below the first statement.
-    (emacs: with cursor at beginning of TOP line, C-k C-k, DOWN, DOWN, C-y)
-    (your editor: ???)
-    3. Compile and run again.
-    4. Resolve errors one at a time until it works.
-    5. Repeat 2-4 until TOP meets BOTTOM.
-***/
+/**
+ *David Deng
+ *APCS
+ *HW23 -- What Does Equality Look Like? / Comparing Variables from Different Objects
+ *2021-10-22
+ *Time Spent: 11 minutes
+ *
+ *DISCOS
+ *If a variable in another class is named exactly the same as a variable in your current class, use the Java keyword `this` to refer to the local variable.
+ *QCC
+ *No unresolved questions.
+ **/
 
 public class Driver {
 
@@ -19,7 +19,7 @@ public class Driver {
 
 
     //test default constructor
-    /*===================TOP==========================
+
       Coin mine = new Coin();
 
       //test 1st overloaded constructor
@@ -47,7 +47,7 @@ public class Driver {
       else {
         System.out.println( "No match. Firestarter you can not be." );
       }
-
+      /*===================TOP==========================
       ====================BOTTOM======================*/
 
   }//end main()

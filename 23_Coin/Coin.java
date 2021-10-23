@@ -1,8 +1,15 @@
-/***
- *  class Coin
- *  by Clyde "Thluffy" Sinclair
- *  SKELETON
- ***/
+/**
+ *David Deng
+ *APCS
+ *HW23 -- What Does Equality Look Like? / Comparing Variables from Different Objects
+ *2021-10-22
+ *Time Spent: 11 minutes
+ *
+ *DISCOS
+ *If a variable in another class is named exactly the same as a variable in your current class, use the Java keyword `this` to refer to the local variable.
+ *QCC
+ *No unresolved questions.
+ **/
 
 public class Coin {
 
@@ -13,7 +20,7 @@ public class Coin {
   private int flipCtr;
   private int headsCtr;
   private int tailsCtr;
-  private float bias;
+  private double bias;
 
 
   /***
@@ -23,6 +30,7 @@ public class Coin {
    ***/
   public Coin() {
 	bias = 0.5;
+	upFace = "heads";
   }
 
 
@@ -39,6 +47,7 @@ public class Coin {
   ***/
   public Coin( String s ) {
 	name = s;
+	upFace = "heads";
   }
 
 
@@ -86,37 +95,37 @@ public class Coin {
   private double assignValue( String s ) {
 	if (s == "penny")
 	{
-		value == 0.01;
-		return value;	
+		value = 0.01;
+		return value;
 	}
 	else if (s == "nickel")
 	{
 		value = 0.05;
-		return value;	
+		return value;
 	}
 	else if (s == "dime")
 	{
 		value = 0.10;
-		return value;	
+		return value;
 	}
 	else if (s == "quarter")
 	{
-		value = 0.25;	
+		value = 0.25;
 		return value;
 	}
 	else if (s == "half dollar")
 	{
 		value = 0.50;
-		return value;	
+		return value;
 	}
 	else if (s == "dollar")
 	{
 		value = 1.0;
-		return value;	
+		return value;
 	}
 	else {
-		return 999999;
 		System.out.println("Enter valid coin name in lowercase");
+		return 0;
 	}
   }
 
@@ -127,10 +136,10 @@ public class Coin {
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset( String s, double d ) {
-  	if((s == "heads" || s == "tails") && (d >= 0.0 && d <= 1.0)){
+  	if ((s == "heads" || s == "tails") && (d >= 0.0 && d <= 1.0)){
   		upFace = "";
-  		bias = 0.5; 	
-  	} 
+  		bias = 0.5;
+  	}
   	else{
   		System.out.println("Preconditions not satisfied.");
   	}
@@ -147,18 +156,20 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
-  	bias = Math.random(0.0,1.0);
-  	if (bias == 1.0){
-  		upFace = "heads";
-  		headsCtr += 1;
-  		return "heads" ;
+	flipCtr += 1;
+	bias = Math.random();
+	double prob = Math.random();
+  	if (prob <= bias) {
+		upFace = "heads";
+		headsCtr += 1;
+		return upFace;
   	}
-  	else{
-  		upFace = "";
-  		headsCtr += 1;
-  		return "heads" ;
-  	}
-  	flipCtr += 1;
+
+	else {
+		upFace = "tails";
+		tailsCtr += 1;
+		return upFace;
+	}
   }
 
 
@@ -169,7 +180,17 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals( Coin other ) {
+	if (other.name == null) {
+		System.out.println("Other coin does not have name");
+		return false;
+	}
 
+	if (other.upFace.equals(upFace)) {
+		return true;
+	}
+	else {
+		return false;
+	}
   }
 
 
@@ -179,7 +200,7 @@ public class Coin {
    * postcond: Return String comprised of name and current face
    ***/
   public String toString() {
-
+	return name + " -- " + upFace;
   }
 
 }//end class
