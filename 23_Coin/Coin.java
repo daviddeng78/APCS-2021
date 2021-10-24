@@ -46,8 +46,14 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-	name = s;
-	upFace = "heads";
+	if (s.equals("penny") || s.equals("nickel") || s.equals("dime") || s.equals("quarter") || s.equals("half dollar") || s.equals("dollar")) {
+		bias = 0.5;
+		name = s;
+		upFace = "heads";
+	}
+	else {
+		System.out.println("Please enter a valid coin name.");
+	}
   }
 
 
@@ -57,6 +63,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
+	bias = 0.5;
 	name = s;
 	upFace = nowFace;
   }
@@ -156,19 +163,26 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
-	flipCtr += 1;
-	bias = Math.random();
-	double prob = Math.random();
-  	if (prob <= bias) {
-		upFace = "heads";
-		headsCtr += 1;
-		return upFace;
-  	}
+	if (bias >= 0.0 && bias <= 1.0) {
+		flipCtr += 1;
+		bias = Math.random();
+		double prob = Math.random();
+	  	if (prob <= bias) {
+			upFace = "heads";
+			headsCtr += 1;
+			return upFace;
+	  	}
+
+		else {
+			upFace = "tails";
+			tailsCtr += 1;
+			return upFace;
+		}
+	}
 
 	else {
-		upFace = "tails";
-		tailsCtr += 1;
-		return upFace;
+		System.out.println("Bias is not on interval 0.0 and 1.0");
+		return "";
 	}
   }
 
