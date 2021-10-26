@@ -21,62 +21,28 @@
 
 public class Driver {
 
-	public static void headCount(Coin inst, int max)
-	{
-		int headsCt = inst.getHeadsCtr();
-		int flips = 0;
-		while (headsCt < max)
-		{
-			inst.flip();
-			headsCt = inst.getHeadsCtr();
-			flips += 1;
-		}
-		System.out.println("It took " + flips + " flips for " + max + " heads to come up.");
-	}
-
-	public static void matchCount(Coin c1, Coin c2, int matches)
+	public static void loop(Coin c1, Coin c2, int x, int y, int birthyear)
 	{
 		int matchCtr = 0;
+		boolean start = true;
+		int headsCt = c1.getHeadsCtr() + c2.getHeadsCtr();
 		int flips = 0;
-		while (matchCtr < matches)
+		while (start)
 		{
+			if ((matchCtr > 65536) && (matchCtr % birthyear == 0) && (headsCt >= x) && (matchCtr >= y))
+			{
+				start = false;
+			}
 			c1.flip();
 			c2.flip();
 			if (c1.equals(c2))
 			{
 				matchCtr += 1;
 			}
+			headsCt = c1.getHeadsCtr() + c2.getHeadsCtr();
 			flips += 1;
 		}
-		System.out.println("It took " + flips + " flips for " + matchCtr + " matches to occur.");
-	}
-
-	public static void yearMatch(Coin c1, Coin c2, int birthyear)
-	{
-		int matchCtr = 0;
-		int flips = 0;
-		while (matchCtr < 65536)
-		{
-			c1.flip();
-			c2.flip();
-			if (c1.equals(c2))
-			{
-				matchCtr += 1;
-			}
-			flips += 1;
-		}
-
-		while (matchCtr % birthyear != 0)
-		{
-			c1.flip();
-			c2.flip();
-			if (c1.equals(c2))
-			{
-				matchCtr += 1;
-			}
-			flips += 1;
-		}
-		System.out.println("It took " + flips + " flips for the # of matches to be greater than 65536 and completely divisible by " + birthyear + ".");
+		System.out.println("It took " + flips + " flips for all conditions to be fulfilled.");
 	}
 
 	public static void main( String[] args ) {
@@ -116,9 +82,7 @@ public class Driver {
       		====================BOTTOM======================*/
 		Coin coin1 = new Coin("penny", "heads");
 		Coin coin2 = new Coin("quarter", "heads");
-		headCount(coin1, 10);
-		matchCount(coin1, coin2, 10);
-		yearMatch(coin1, coin2, 2005);
+		loop(coin1, coin2, 70000, 69000, 2005);
   	}//end main()
 
 }//end class
