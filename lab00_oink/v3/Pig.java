@@ -16,9 +16,8 @@
  *WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO:
  *In the scanner demo, the method sc.next() is called twice in the main method. Everytime this method is called, the scanner moves to the next line. Therefore, this causes an error because if you have an uneven amount of words in your 'words.in' file, when scanner tries to go to the next line, it will eventually run into a nonexistent line. 
  *
- *NEW IN v2:
- *Functional scanner if file contains no blank lines in between words.
- *Fixed translator so it accounts for words with no vowels and does not contain the letter 'y'
+ *NEW IN v3:
+ *Created new method that allows for reading of inputs with phrases
  */
 
 import java.util.Scanner;
