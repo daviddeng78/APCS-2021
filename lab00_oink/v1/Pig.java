@@ -9,6 +9,11 @@
  *
  *QCC
  *
+ *NEW in v1
+ *Modified engtoPig() to include more cases such as:
+ * -capitalization
+ * -punctuation
+ * -occurence of y as only vowel
  */
 
 public class Pig {
