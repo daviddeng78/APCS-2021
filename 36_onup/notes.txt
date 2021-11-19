@@ -1,3 +1,9 @@
+David Deng
+APCS
+HW36 -- All Quacked Up
+2021-11-18
+Time Spent: 0.4 hrs
+
 Errors are essentially composed of three types:
     - Compile-time errors: Indicates that something is wrong with the syntax of a program.
     - Run-time errors: Produced if something goes wrong during code execution.
