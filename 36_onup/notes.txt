@@ -1,0 +1,48 @@
+Errors are essentially composed of three types:
+    - Compile-time errors: Indicates that something is wrong with the syntax of a program.
+    - Run-time errors: Produced if something goes wrong during code execution.
+    - Logic errors: Causes the program to do the wrong thing. 
+
+---
+
+Compile-time errors:
+
+In large programs, Java will often spew out a lot of error messages, especially if you've added a lot of code since the last successful compilation. 
+DO NOT FREAK OUT. There are often not that many actual errors, but rather the compiler tries to get back on track after a minor syntax error and ends up straying even further. 
+FIX THE FIRST ERROR THAT THE COMPILER STATES. RECOMPILE. Repeat until no more errors. You will find that fixing one minor syntax error can often "erase" numerous errors.
+
+Java often gives you error messages written in very complicated jargon but there are hints of information that can be taken from the simpler terms. If nothing else, the error message states the line number and column number where the error manifested.
+Look for common syntax errors. 
+
+If the error is still present, check if the file you're compiling and the file you're editing are the same.
+
+Desperate times call for desperate measures. If errors are still present, make a copy of the original code and start deleting parts of the original code. This is known as debugging by bisection.
+If the code compiles, the error is not present in that section but if it does not, it is.
+When you have fixed the error, bring back parts of code slowly, compiling at every reintegration. 
+
+Sometimes, ignoring the compiler is best. It is good at locating errors but needs some work on its solutions.
+
+---
+
+Run-time errors:
+
+Programs will sometimes hang, or seem to not do anything. This might be caused by it being stuck in a infinite loop or recursion.
+Printing might help you tell whether the program is doing what you intend for it to do.
+DO NOT ADD EXCESSIVE PRINT STATEMENTS. You will get flooded to the point where you get more lost. Remove unnecessary code and simplify. Take in smaller inputs of data if you're dealing with data.
+Check for base cases if your program involves recursion.
+Exceptions will occur often during runtime errors. Reading them reveals a lot as they are often self-explanatory.
+
+---
+
+Logic errors:
+
+Objectively the worst type of error. Compiles and runs alright but doesn't do what you intend to do. 
+Draw out the execution of the program and THINK like a computer. 
+Use temporary variables so it's better to visualize. Conciseness is not always better.
+Add documentation. Remember, you're looking at this code the most. Add comments so you know what your code does.
+TAKE A BREAK. Don't stare constantly and expect the problem to be solved.
+ASK FOR HELP. Programmers have big egos but if you're genuinely stuck, taking a blow to your ego is better than getting nothing done.
+
+--- 
+
+LEARN FROM YOUR MISTAKES. It helps make debugging in the future faster.
