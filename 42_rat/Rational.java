@@ -1,15 +1,18 @@
 /**
  * Blue Steaks - Max Schneider, Faiyaz Rafee, David Deng
  * APCS
- * HW41 -- Be Rational
+ * HW42 -- Be Rational
  * 2021-11-30
- * time spent: 0
+ * time spent: 0.2
  * 
  * DISCO:
-  Something in our plan was bad, but we got lucky and it didn't translate to the code
-  Keep-Change-Flip remains top-tier
+  Power of a dummy instance of a class
+  Power of this
+  Importance of organized main method to see if code works
+  Importance of java visualizer
  * QCC:
-  Is "this" important?
+  More efficient ways to copy an instance
+  Better methods to add and subtract
  */
 
 public class Rational {
