@@ -21,23 +21,6 @@
  How much less inefficient is a deep copy?
  ***************************/
 
-// Clyde "Thluffy" Sinclair
-// APCS1 pd0
-// HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08w
-
-/***************************
- * class SuperArray version 2.0
- * (SKELETON)
- * Wrapper class for array. Facilitates
- * resizing
- * expansion
- * read/write capability on elements
- * adding an element to end of array
- * adding an element at specified index
- * removing an element at specified index
- ***************************/
-
 public class SuperArray
 {
 
