@@ -1,7 +1,7 @@
 // Blue Steaks - Max Schneider, Faiyaz Rafee, David Deng
 // APCS1 pd7
-// HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08
+// HW45 -- Array of Titanium / Expanding SuperArray functionality, interfaces
+// 2021-12-09
 
 /***************************
  * class SuperArray version 2.0
@@ -14,14 +14,12 @@
  * adding an element at specified index
  * removing an element at specified index
  Disco:
- *Importance of .this. Code did not work otherwise.
- *JAVA VISUALIZER!!!
- *the size() method is very helpful and needs to be utitlized anytime a we chnage the number of meaning ful values in the arrays
+ *Documentation helps debugging code
  QCCs:
- How much less inefficient is a deep copy?
+ *What practical applications does an interface have?
  ***************************/
 
-public class SuperArray
+public class SuperArray implements ListInt
 {
 
   private int[] _data;  //underlying ("encapsulated") container
@@ -79,27 +77,36 @@ public class SuperArray
 
 
   //adds an item after the last item
-  public void add( int newVal )
+  public boolean add( int newVal )
   {
-    if (_size == _data.length) {
-        expand();
-      }
-    _data[_size] = newVal;
-    _size++;
+    //checks if current array is large enough
+    if (this._size == this._data.length) {
+      expand();
+    }
+    //appends new value to end of subarray of meaningful values
+    this._data[this._size]=newVal;
+    //increments length of meaningful values
+    this._size++;
+    return true;
   }
 
 
   //inserts an item at index
-  public void add( int index, int newVal )
+  public boolean add( int index, int newVal )
   {
-    if (_size == _data.length) {
-        expand();
-      }
-    _size++;
-    for (int i = _size; i > index; i--) {
-        _data[i] = _data[i - 1];
+    //checks if current array is large enough
+    if (this._size >= this._data.length) {
+      expand();
     }
-    _data[index] = newVal;
+    //shifts all values right of index where insertion will happen to the right by 1
+    for(int i = this._size; i>index;i--) {
+      this._data[i]=this._data[i-1];
+    }
+    //inserts newVal at allocated index
+    this._data[index]=newVal;
+    //increments length of meaningful values
+    this._size++;
+    return true;
   }
 
 
@@ -107,17 +114,33 @@ public class SuperArray
   //shifts elements left to fill in newly-empted slot
   public void remove( int index )
   {
-    for (int i = index; i < _size; i++) {
-        _data[i] = _data[i + 1];
+    //shifts all values right of index where value will be removed to the left by 1
+    for(int i = index; i<this._size-1;i++) {
+      this._data[i]=this._data[i+1];
     }
-    _size--;
+    //sets far right value of previous subarray of meaningful values to 0
+    this._data[this._size-1]=0;
+    //decrements length of meaningful values
+    this._size--;
   }
 
 
   //return number of meaningful items in _data
   public int size()
   {
-    return _size;
+    //sets meaningful items to length of array
+    int answer = this._data.length;
+    //iterates from the back 
+    for (int i = this._data.length-1; this._data[i] == 0; i--) {
+      //decrements number of meaningful values
+      answer--;
+      //accounts for case when there are no meaningful values
+      if (i == 0) {
+        return answer;
+      }
+    }
+    //returns number of meaningful values should the iteration encounter one
+    return answer;
   }
 
 
