@@ -13,13 +13,17 @@
  *
  * QCC
  * q0: How many passes to sort n elements?
- * a0:
+ * a0: n - 1 passes
  * q1: What do you know after pass p?
- * a1:
+ * a1: p elements are confirmed to be in their final sorted location
  * q2: How do you know if sorted?
- * a2:
+ * a2: When `# of elements - 1` passes are reached
  * q3: What does a pass boil down to?
- * a3:
+ * a3: A pass boils down to:
+ * - traversing the array from the beginning to index pass - 1
+ * - finding the index at which the maximum value is present
+ * - swapping the value at this maximum value index with the value at index pass
+ * - incrementing pass so we ignore the confirmed index on our next traversal
  ******************************/
 
 
@@ -67,22 +71,20 @@ public class SelectionSort
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos;
 
-    for(int i = data.size(); i > 0; i--) {
+    for(int pass = data.size() - 1; pass > 0; pass--) {
       System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
-      maxPos = 0;
+      maxPos = pass;
 
-      for(int y = 1; y < i; y++ ) {
-        if (data.get(y) > data.get(maxPos)) {
-          maxPos = y;
+      for(int i = 1; i < pass; i++) {
+        if (data.get(i).compareTo(data.get(maxPos)) > 0) {
+          maxPos = i;
         }
         System.out.println( "maxPos: " + maxPos );//diag
-        Comparable dummy = data.get(maxPos);
-        data.set(i, data.get(data.size() - pass));
-        data.set(data.get(pass), dummy);
         System.out.println( data );//diag
-        pass++;
       }
-
+      Comparable dummy = data.get(pass);
+      data.set(pass, data.get(maxPos));
+      data.set(maxPos, dummy);
 
       System.out.println( "after swap: " +  data );//diag
     }
@@ -111,7 +113,7 @@ public class SelectionSort
   public static void main( String [] args )
   {
 
-    /*===============for VOID methods=============
+    
     ArrayList glen = new ArrayList<Integer>();
     glen.add(7);
     glen.add(1);
@@ -126,7 +128,7 @@ public class SelectionSort
     System.out.println( "ArrayList coco before sorting:\n" + coco );
     selectionSortV(coco);
     System.out.println( "ArrayList coco after sorting:\n" + coco );
-      ============================================*/
+    
 
     /*==========for AL-returning methods==========
       ArrayList glen = new ArrayList<Integer>();
