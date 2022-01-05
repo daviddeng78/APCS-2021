@@ -1,27 +1,30 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Grey Leche: Faiyaz Rafee, May Qiu, David Deng
+// APCS pd7
 // HW53 -- implementing insertion sort
 // 2022-01-06r
-// time spent:  hrs
+// time spent: 0.1 hrs
 
 /******************************
  * class InsertionSort -- implements InsertionSort algorithm
  *
  * ALGO:
- *
- * DISCO
- *
+ * Create variable that holds the index of the element to be sorted (first element of unsorted array). This also means the number of elements in the sorted section.
+ * Start at sorted section of 1.
+ * Traverse sorted section from right. If element to be sorted is less than element in front of it, swap elements.
+ * Else, break. Increment variable to hold the next index for sorting (thereby impacting the sorted section size as well).
+ * DISCO:
+ * Writing a KTS is very helpful
  * QCC
  * q0: How many passes to sort n elements?
- * a0:
+ * a0: n - 1 passes
  * q1: What do you know after pass p?
- * a1:
+ * a1: Every element before and including the one at index p is part of the sorted section
  * q2: How will you know when sorted?
- * a2:
- * q3: What constitues a pass?
- * a3:
+ * a2: After n - 1 passes are performed
+ * q3: What constitutes a pass?
+ * a3: Sorting first element of unsorted section into sorted section by decrementing index until it becomes sorted again
  * q4: What must you track?
- * a4:
+ * a4: The boundary between the sorted and unsorted section
  ******************************/
 
 
@@ -72,14 +75,15 @@ public class InsertionSort
 
         // "walk" the current item to where it belongs
         // by swapping adjacent items
-        if (data.get(i).compareTo(data.get(i -1)) < 0) {
+        if (data.get(i).compareTo(data.get(i - 1)) < 0) {
+          System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
           Comparable dummy = data.get(i);
           data.set(i, data.get(i - 1));
-          data.set(i - 1, dummy);
-          System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
+          data.set(i - 1, dummy); 
         }
-        else
+        else {
           break;
+        }
       }
     }
   }//end insertionSortV
@@ -108,7 +112,6 @@ public class InsertionSort
 
   public static void main( String [] args )
   {
-    /*===============for VOID methods=============
       System.out.println("\n*** Testing sort-in-place (void) version... *** ");
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
@@ -124,9 +127,11 @@ public class InsertionSort
       System.out.println( "\nArrayList coco before sorting:\n" + coco );
       insertionSortV(coco);
       System.out.println( "\nArrayList coco after sorting:\n" + coco );
+      /*===============for VOID methods=============
       ============================================*/
 
 
+      /*==========for AL-returning methods==========
       System.out.println( "*** Testing non-void version... *** " );
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
@@ -145,8 +150,7 @@ public class InsertionSort
       ArrayList cocoSorted = insertionSort( coco );
       System.out.println( "\nsorted version of ArrayList coco:\n"
       + cocoSorted );
-      System.out.println( "\nArrayList coco after sorting:\n" + coco );
-      System.out.println( coco );
+      ============================================*/
 
   }//end main
 
