@@ -183,14 +183,10 @@ public class Magpie4
 					.length() - 1);
 		} 
 		int pos = findKeyword(statement, "I");
-    int psn = findKeyword(statement, "you");
+    	int psn = findKeyword(statement, "you");
 		String MidOfStatement = statement.substring(pos + 1, psn).trim();
 		return "Why do you " + MidOfStatement + " me?";
 	}
-	
-	
-
-	
 	
 	/**
 	 * Search for one word in phrase. The search is not case
