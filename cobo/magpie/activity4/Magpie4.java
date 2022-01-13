@@ -36,14 +36,14 @@ public class Magpie4
 	{
 		String response = "";
 		if (statement.trim().length() == 0)
-    {
-      response = "Say something, please";
-    }
-    else if (findKeyword(statement, "Mykolyk") >= 0)
-    {
-      response = "He sounds like a good teacher";
-    }
-    else if (findKeyword(statement, "Faiyaz") >= 0)
+    	{
+      		response = "Say something, please";
+    	}
+    	else if (findKeyword(statement, "Mykolyk") >= 0)
+    	{
+      		response = "He sounds like a good teacher";
+    	}
+    	else if (findKeyword(statement, "Faiyaz") >= 0)
 		{ 
 			response = "FAIYAZ BE KINDA AWESOME NGL, i want to give him a super fancy $450 keyboard :D";
 		} 
@@ -58,17 +58,17 @@ public class Magpie4
 		{
 			response = "Tell me more about your family.";
 		}
-    else if (findKeyword(statement, "dog") >= 0
-        || findKeyword(statement, "cat") >= 0
-        || findKeyword(statement, "bird") >= 0 )
-    {
-      response = "Tell me more about your pets.";
-    }
-    else if (findKeyword(statement, "cake") >= 0
-        || findKeyword(statement, "macarons") >= 0) 
-    {
-      response = "That sounds delicious but my favorite dessert is lava cake";
-    }
+    	else if (findKeyword(statement, "dog") >= 0
+        		|| findKeyword(statement, "cat") >= 0
+        		|| findKeyword(statement, "bird") >= 0 )
+    	{
+      		response = "Tell me more about your pets.";
+    	}
+    	else if (findKeyword(statement, "cake") >= 0
+        		|| findKeyword(statement, "macarons") >= 0) 
+    	{
+      		response = "That sounds delicious but my favorite dessert is lava cake";
+    	}
 
 		// Responses which require transformations
 		else if (findKeyword(statement, "I want to", 0) >= 0)
@@ -76,14 +76,15 @@ public class Magpie4
 			response = transformIWantToStatement(statement);
 		}
 
-    else if (findKeyword(statement, "I want") >= 0)
+    	else if (findKeyword(statement, "I want") >= 0)
 		{
 			response = transformIWantStatement(statement);
 		}
 
-    else if(findKeyword(statement, "you") - findKeyword(statement, "I") <= 8){
-      response = transformIYouStatement(statement);
-    }
+    	else if(findKeyword(statement, "you") - findKeyword(statement, "I") <= 8)
+		{
+      		response = transformIYouStatement(statement);
+    	}
 
 		else
 		{

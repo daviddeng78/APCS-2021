@@ -29,16 +29,16 @@ public class Magpie3
 	 */
 	public String getResponse(String statement)
 	{
-    String response = "";
+    	String response = "";
 		if (statement.trim().length() == 0)
-    {
-      response = "Say something, please";
-    }
-    else if (findKeyword(statement, "Mykolyk") >= 0)
-    {
-      response = "He sounds like a good teacher";
-    }
-    else if (findKeyword(statement, "Faiyaz") >= 0)
+    	{
+      		response = "Say something, please";
+    	}
+		else if (findKeyword(statement, "Mykolyk") >= 0)
+		{
+			response = "He sounds like a good teacher";
+		}
+    	else if (findKeyword(statement, "Faiyaz") >= 0)
 		{ 
 			response = "FAIYAZ BE KINDA AWESOME NGL, i want to give him a super fancy $450 keyboard :D";
 		} 
@@ -53,17 +53,17 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
-    else if (findKeyword(statement, "dog") >= 0
-        || findKeyword(statement, "cat") >= 0
-        || findKeyword(statement, "bird") >= 0 )
-    {
-      response = "Tell me more about your pets.";
-    }
-    else if (findKeyword(statement, "cake") >= 0
-        || findKeyword(statement, "macarons") >= 0) 
-    {
-      response = "That sounds delicious but my favorite dessert is lava cake";
-    }
+    	else if (findKeyword(statement, "dog") >= 0
+        		|| findKeyword(statement, "cat") >= 0
+        		|| findKeyword(statement, "bird") >= 0 )
+    	{
+      		response = "Tell me more about your pets.";
+    	}
+    	else if (findKeyword(statement, "cake") >= 0
+        		|| findKeyword(statement, "macarons") >= 0) 
+    	{
+      		response = "That sounds delicious but my favorite dessert is lava cake";
+    	}
 		else 
 		{
 			response = getRandomResponse();
