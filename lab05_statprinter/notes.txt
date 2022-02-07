@@ -1,0 +1,28 @@
+Team (Sophia Eiden, David Deng, Jing Yi Feng)
+APCS pd06
+L05 -- pulling it together
+2022-02-03r
+time spent: 3 hrs
+
+
+DISCO
+------------------------------------------------
+* Time Complexity for constructor: O(n)
+* Time complexity for max: O(n)
+* Time complexity for isLocalMode: O(1)
+* Time complexity for getLocalMode: O(1)
+* Time complexity for printHistogram: O(n^2)
+* Definition of local mode: greater than the value of index before it and less than value od index after it, never at end of list.  
+================================================
+
+
+QCC
+------------------------------------------------
+* 
+================================================
+
+
+MISC
+------------------------------------------------
+* 
+================================================
