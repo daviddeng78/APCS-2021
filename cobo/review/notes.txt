@@ -19,3 +19,15 @@ It then splits the resulting text by spaces and stores it in the String array 'w
 It then iterates through the array, taking out punctuation, if any, using the method removePunctuation() and calculates the sentiment value of that word using the method sentimentVal().
 It then adds that to a current 'totalSentiment' tracker.
 After iteration is complete, it returns 'totalSentiment'.
+
+2.5
+(a) The ratings sometimes make sense but can also deviate from the actual review by quite a lot other times.
+(b) We can adjust our totalSentiment() method by making it look at adjacent words for "emphasis" words. This way, it can decide whether a word such as "definitely", which normally seems positive, is assigned the right sign (e.g. definitely in "definitely not")
+    We can also make our totalSentiment() method better by taking the average of the sentiment rather than the total of the sentiment. This way, the length of the review does not play as much of a factor in the final sentiment rating.
+
+2.6
+The student put more exclusive booleans after the more inclusive ones. In doing this, every boolean that should satisfy a lesser boolean first would always run into the first one, assigning every value < 15 to return a star rating of 4. To fix this, just invert the boolean order so that the more exclusive ones are higher in the conditional tree.
+
+3.3
+The indexOf() method allows for the computer to find the first index where the substring occurs. The substring() method allows us to separate a string from index start to index end - 1 where start and end are specified by the user. These work in tandem to help divide a string into two parts because the former finds the index where we perform the substring split and the latter does the splitting.
+It is necessary to add 1 to the position of the space when copying the remainder of the string because it is important to remember that it starts the substring from that index and, therefore, not adding 1 would include the space in the remaining string.

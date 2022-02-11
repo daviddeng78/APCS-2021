@@ -117,6 +117,10 @@ public class Review {
       }
       return 3;
   }
+
+  public static String fakeReview(String fileName) {
+    
+  }
   
   /**
    * Returns the ending punctuation of a string, or the empty string if there is none 
@@ -133,7 +137,7 @@ public class Review {
     }
     return punc;
   }
-  
+
     /**
    * Returns the word after removing any beginning or ending punctuation
    */
