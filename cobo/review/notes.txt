@@ -1,0 +1,21 @@
+1.1
+(a) public static double sentimentVal(String word)
+(b) This method requires a parameter of type String. If you pass a different type of parameter, it will throw an error.
+(c) This method returns a value of type double.
+
+1.2
+sentimentVal("ability") -> -0.03
+sentimentVal("academic") -> 0.43
+sentimentVal("absolute") -> -1.51
+
+1.3
+(a) Will compile. The parameter is of type String and the result is assigned to a variable of type double.
+(b) Will not compile. The parameter is of type double, not String, and the variable the result is assigned to is of type String.
+(c) Will not compile. There are two parameters given, not one.
+
+2.4
+The totalSentiment() method converts the contents of the parameter 'fileName' into text using the method textToString(). 
+It then splits the resulting text by spaces and stores it in the String array 'words'.
+It then iterates through the array, taking out punctuation, if any, using the method removePunctuation() and calculates the sentiment value of that word using the method sentimentVal().
+It then adds that to a current 'totalSentiment' tracker.
+After iteration is complete, it returns 'totalSentiment'.
