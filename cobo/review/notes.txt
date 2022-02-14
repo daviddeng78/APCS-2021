@@ -66,3 +66,33 @@ It was necessary to remove the * character and other symbols because it would in
 
 4.7
 Add more positive adjectives to the review.
+
+5.1
+I chose to implement a cipher because it deals with string modification and seemed interesting.
+
+5.2
+Development process:
+- Analyzing test cases, dividing the undeveloped algorithm into certain conditions and then deriving what it does under each condition.
+- Found out that approach is not ideal 🙄. Review algorithm and develop more succinct one. Printing at certain points in the algorithm helps to get an idea of what is wrong.
+
+5.3
+'public static String encode(String plain, String keyword)'. I chose two parameters because one String represents the text to be encoded whereas the second String represents the key which the encoding revolves around.
+I made the method static so it could be accessed by the main method for testing.
+
+5.4
+'char[] charArray = plain.toCharArray()': This converts the text to be encoded into a character array for iteration during the encoding process.
+'keyword.charAt(i % keyword.length())': The length() method returns the length of the String object.
+
+5.5
+'if (c < 65 || c > 90)' EQUIVALENT CODE: 'if (c < 'A' || c > 'Z')'
+
+5.6
+'for (char c : charArray) {
+    //code
+}'
+The loop iterates through the character array and manipulates it according to the algorithm.
+
+EQUIVALENT CODE: 
+'for (int i = 0; i < charArray.length; i++) {
+    //code
+}'
