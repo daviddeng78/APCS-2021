@@ -1,0 +1,33 @@
+¯\_(ツ)_/¯ -- Brianna Tieu, Nicole Zhou, David Deng
+APCS pd06
+HW69 - Making Sense
+time spent: 0.5 hrs
+
+Knight Tour time measurements:
+ n=5   0.793s    across 3 executions
+ n=6   1.142s    across 3 executions
+ n=7   179.701s    across 3 executions
+ n=8   631.674s    across 3 executions
+
+q0: An open tour cannot always be found from any starting position because for
+    a 5x5, if you begin in row 4 and column 3 (excluding the moat), the tour is
+    impossible. But if you begin in row 2 and column 2 (the middle of the board),
+    the tour can be successfully completed.
+q1: A closed tour cannot always be found from any starting position, because
+    for some boards, like the 5x5 above, a open tour isn't possible from some
+    positions.
+q2: As n increases, we can observe an large exponential growth in the time
+    measurements. This is because of the exponential increase in the amount of
+    squares as we increase n by 1.
+q3: For optimizations of runtime, we can get rid of the print statements that
+    come with each placement of a knight. Additionally, we can have the knights
+    proceed to routes that have the lowest amount of possibilities within our
+    tree nodes to make the backtracking process more efficient.
+
+MAZE ALGO:
+1. At the starting position, check the cell's surroundings for the next empty
+   cell.
+2. Once the next empty cell is found, move to it.
+3. Repeat, marking each cell as the "character" travels.
+   a) Once the "character" hits a dead end, backtrack and repeat the above steps.
+4. If the "character" reaches the end, the maze's solution has been found.
