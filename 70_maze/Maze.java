@@ -197,7 +197,7 @@ public class Maze
     MazeSolver ms = new MazeSolver( mazeInputFile );
 
     //clear screen
-    System.out.println( "[2J" );
+    System.out.println( "[2J" );
 
     //display maze
     System.out.println( ms );
@@ -207,7 +207,7 @@ public class Maze
     //ms.solve( 4, 3 );
     //ms.solve( 4, 7 );
     //drop our hero into maze at random location on path
-    while (ms.onPath(startX, startY) == false) {
+    while (!ms.onPath(startX, startY)) {
       startX = (int) (Math.random() * ms.h);
       startY = (int) (Math.random() * ms.w);
     }
