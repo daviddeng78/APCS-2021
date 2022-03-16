@@ -2,11 +2,11 @@
  * interface List
  * subset of actual Java List interface
  * Specifies actions a List must be able to perform.
- * 
+ *
  * If placed in current working dir, will be consulted instead of
  *  built-in Java library interface.
- * 
- * new in version 2.0: 
+ *
+ * new in version 2.0:
  * REMOVE-AT-INDEX
  * ADD-AT-INDEX
  **/
@@ -17,7 +17,7 @@ public interface List
   public boolean add( String x );
 
   //insert at specified index
-  public void add( int index, String newVal ); 
+  public void add( int index, String newVal );
 
   //remove node from list, return its data
   public String remove( int index );

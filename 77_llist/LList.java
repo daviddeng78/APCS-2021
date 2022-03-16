@@ -1,8 +1,19 @@
-// Clyde Sinclair
-// APCS pd0
+// Ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+// APCS pd6
 // HW76 -- implement linked list
-// 2022-03-14m
-// time spent:  hrs
+// 2022-03-15
+// time spent:  .8 hrs
+
+/*
+DISCO
+* We can think of a linked list as *linking* a bunch of different objects.
+  These objects can be created at any point. All that happens is we reorrient the pointers in a linked list.
+  - DD
+
+QCC
+* Is there a method for creating a copy of an Object that occupies a different memory register?
+* Memory is very confusing - MJ
+*/
 
 
 /***
