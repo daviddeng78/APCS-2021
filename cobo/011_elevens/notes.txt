@@ -1,0 +1,36 @@
+Ruawawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+L07 -- But These Go Up To Eleven
+2022-03-20
+time spent:  1 hrs
+
+DISCO
+ - Interfaces are italicized on the API
+QCC
+ - WHY DO THEY SUCK AT SPACING?? Number 1, why put any spacing at all in a file name. Number 2, WHY PUT TWO SPACES BETWEEN WORDS??? EVER??
+
+Activity 2:
+
+Questions:
+1. Explain in your own words the relationship between a deck and a card.
+A: The deck class contains lists that are filled by cards.
+
+2. Consider the deck initialized with the statements below. How many cards does the deck contain?
+String[] ranks = {"jack", "queen", "king"};
+String[] suits = {"blue", "red"};
+int[] pointValues = {11, 12, 13};
+A: The deck contains six cards.
+
+Deck d = new Deck(ranks, suits, pointValues);
+3. The game of Twenty-One is played with a deck of 52 cards. Ranks run from ace (highest) down to 2
+(lowest). Suits are spades, hearts, diamonds, and clubs as in many other games. A face card has point
+value 10; an ace has point value 11; point values for 2, ..., 10 are 2, ..., 10, respectively. Specify the
+contents of the ranks, suits, and pointValues arrays so that the statement
+Deck d = new Deck(ranks, suits, pointValues);
+initializes a deck for a Twenty-One game.
+A: Ranks would contain every rank from ace to two, running in decreasing order (standard deck of cards). Suits
+would contain hearts, clubs, spades, and diamonds. pointValues would contain 11, 10, and then every number from 9 to
+1, IN DECREASING ORDER.
+4. Does the order of elements of the ranks, suits, and pointValues arrays matter?
+A: The order of ranks and suits does not matter as we create every possible combination. The order of pointValues matters
+because we assign them one to one to the ranks value.
