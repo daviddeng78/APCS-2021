@@ -1,13 +1,15 @@
 Ruawawatrain: Benjamin Belotser, David Deng, Josiah Moltz
 APCS pd6
 L07 -- But These Go Up To Eleven
-2022-03-20
-time spent:  1 hrs
+2022-03-21
+time spent:  2 hrs (1 on weekend, 1 on Monday)
 
 DISCO
  - Interfaces are italicized on the API
 QCC
  - WHY DO THEY SUCK AT SPACING?? Number 1, why put any spacing at all in a file name. Number 2, WHY PUT TWO SPACES BETWEEN WORDS??? EVER??
+ - Assertions seem really (REALLY) similar to if statements... you start to wonder what's the point?
+ - Why would assertions be disabled by default (-JM)?? Could it be like a testing mode/debug mode (-BB)?
 
 Activity 2:
 
@@ -34,3 +36,18 @@ would contain hearts, clubs, spades, and diamonds. pointValues would contain 11,
 4. Does the order of elements of the ranks, suits, and pointValues arrays matter?
 A: The order of ranks and suits does not matter as we create every possible combination. The order of pointValues matters
 because we assign them one to one to the ranks value.
+
+Activity 5:
+  Buggy 1:
+    isEmpty doesn't work properly
+  Buggy 2:
+    size doesn't update properly
+  Buggy 3:
+    match doesn't work properly
+  Buggy 4:
+    Deck doesn't set cards properly
+  Buggy 5:
+    shuffle doesn't function - the for loop printing items goes lower than index 0
+    isEmpty doesn't account for size == 0
+    constructor starts at index 1 instead of 0
+    should check empty before decrementing size in deal

@@ -51,6 +51,27 @@ public class DeckTester {
 		System.out.println();
 		System.out.println();
 
+		Deck bicycle = new Deck(new String[] {"2","3","4","5","6","7","8","9","10","J","Q","K","A"}, new String[] {"hearts", "spades", "clubs", "diamonds"}, new int[] {2,3,4,5,6,7,8,9,10,11,12,13,14});
+		System.out.println("**** Standard Deck ****");
+		System.out.println(bicycle);
+		System.out.println();
+		System.out.println();
+
+		System.out.println("**** Shuffling Deck ****");
+		bicycle.shuffle();
+		System.out.println(bicycle);
+
+		System.out.println("**** Dealing Cards ****");
+		System.out.println("	deal: " + bicycle.deal());
+		System.out.println("	deal: " + bicycle.deal());
+		System.out.println(bicycle);
+		System.out.println();
+		System.out.println();
+
+		System.out.println("**** Shuffling Deck ****");
+		bicycle.shuffle();
+		System.out.println(bicycle);
+
 		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
 	}
 }
