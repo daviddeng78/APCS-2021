@@ -1,0 +1,14 @@
+Ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW80: Generically Speaking
+2022-03-24
+time spent:  0.5 hrs
+
+
+QCC:
+
+DISCO:
+
+T is a placeholder for a generic object that the class will use (ish).
+T cannot be a primitive. (QAF post)
+When declaring a typed class implementing a typed interface, we have to put <T> in the declaration for both the class and the interface
