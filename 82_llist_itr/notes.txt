@@ -1,0 +1,22 @@
+Ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW82 -- Roll Your Own Iterator
+2022-03-27
+time spent:  1 hrs
+
+DISCO
+0. Java compiles the inner class as `LList$MyIterator.class`.
+1. $ is typed in the terminal with \$
+
+QCC
+0. WHATZ UP WITH `LList.this.remove()`? We understand LList.remove() but why is `this` necessary? Why does it clear up
+```
+              LList.java:301: error: non-static method remove(int) cannot be referenced from a static context
+                    LList.remove(index); // why is this required?
+                         ^
+              where T is a type-variable:
+                T extends Object declared in class LList
+              1 error
+```
+1. How could/can we ensure all elements were removed without the use of an extra instance variable?
+EDIT QCC 1 was resolved after an excellent suggestion by TSR
