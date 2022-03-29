@@ -1,3 +1,9 @@
+// Ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+// APCS pd6
+// HW83 -- Stacks on Stacks
+// 2022-03-28
+// time spent: 0.5 hrs
+
 /***
  * class Latkes
  * v1
@@ -31,47 +37,54 @@ public class Latkes
   public void push( String s )
   {
     if (isFull()) {
-      System.out.println("Pancake stack will fall over. Aborting...");
+        String[] newStack = new String[_stack.length + 10];
+        for (int i = 0; i < _stack.length; i++) {
+            newStack[i] = _stack[i];
+        }
+        _stack = newStack;
+        push(s);
     }
     else {
       _stack[_stackSize] = s; //treats end of array as top of current stack of pancakes
       _stackSize++; //increases number of pancakes by 1
     }
-  }// O(?)
+  }// Amortized: O(1) because it only requires adding element `s` at index `_stackSize`. 
+   //If the underlying array is full, the time complexity is O(n) because it requires creating a new array with a greater length
+   //and performing a deep copy on the previous array
 
 
   //means of removal
   public String pop( )
   {
     if (isEmpty()) {
-      System.out.println("You have no pancakes right now :(");
+        return null;
     }
     else {
-      String tmp = _stack[_stackSize - 1];
-      _stack[_stackSize - 1] = 0;
-      _stackSize--;
+        String tmp = _stack[_stackSize - 1];
+        _stack[_stackSize - 1] = null;
+        _stackSize--;
+        return tmp;
     }
-  }// O(?)
+  }// O(1) because it just sets the element at index `_stackSize` to null.
 
 
   //chk for emptiness
   public boolean isEmpty()
   {
     return _stackSize == 0;
-  }// O(?)
+  }// O(1) because it compares the instance var `_stackSize` to 0.
 
 
   //chk for fullness
   public boolean isFull()
   {
     return _stackSize == _stack.length;
-  }// O(?)
+  }// O(1) because it compares the instance var `_stackSize` to the length of the underlying array
 
 
   //main method for testing
   public static void main( String[] args )
   {
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
     Latkes tastyStack = new Latkes(10);
 
@@ -115,6 +128,7 @@ public class Latkes
 
     //stack empty by now; SOP(null)
     System.out.println( tastyStack.pop() );
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main()
