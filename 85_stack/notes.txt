@@ -1,0 +1,11 @@
+Ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW85 -- Leon Leonwood Stack
+2022-03-30
+time spent: 0.5 hrs
+
+DISCO
+0. David magic syntax `return <boolean> ? <return this if true> : <return this if false>` -- ? shows a pathway
+
+QCC
+0. This felt eerily similar to a lot of the code we wrote before, we kinda just looked at documentation. We always read documentation.
