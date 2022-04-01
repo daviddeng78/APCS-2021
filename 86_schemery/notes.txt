@@ -1,0 +1,11 @@
+Ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW86 -- What a Racket
+2022-03-31
+time spent: 0.5 hrs
+
+DISCO
+0. This algo is kinda sick.
+
+QCC
+0. THERES NO WAY THIS WORKED SO CLEANLY
