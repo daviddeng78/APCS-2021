@@ -6,12 +6,9 @@ A1
       Delimited is necessary because you don't want them to take everything.
   Q4  Look at the name of the column. In general... look at the data and determine the type??
   Q5  Programming. Physics.
-  Q6  
-      Programming: What were the most interesting topics of students over the past year?
-
-      Physics: What were the most interesting topics of students over the past year?
-  Q7  There aren't really any online data sets that apply to our questions but perhaps we can poll current classes on their favorite topic in CS over the past year.
-  Q8  Roughly 1000 students that are taking some CS course right now? In homework summaries (might not be found in every class), so 75000 files, we can sort of gather positivity to determine student interest in that topic
+  Q6  COME BACK TO IT!?!?!??!?!?!?!??!
+  Q7  ^
+  Q8  ^
   Q9  YouTube's recommended videos are cool. Probably negative impact in terms of productivity.
   Q10 We don't know for sure, but YouTube probably categorizes videos and then searches for similar types.
       Additionally, YouTube probably also tracks what other users who watched the same videos watched, and recommends these.
@@ -34,7 +31,26 @@ A3
   Q2  Q1 ID is KATL
       New ID is KHOE
       The temperature at Homerville Airport, GA is 64.0F
-  Q3  Colder at KATL 
-  Q4 48 land stations NY 
-  Q5 We could filter weather stations by wind chill. 
-  Q6
+  Q3  Colder at KATL
+  Q4  48 land stations NY
+  Q5  We could filter weather stations by wind chill.
+  Q6  Pago Pago, AS, Samoa
+  Q7  What station has the lowest longitude?
+  Q8  About the same length of code it took to answer Q6
+
+A4
+  Q1  What is the lowest housing price in NYC. We wanted to know because some of us plan on living in NYC in the future.
+  Q2  We chose nyc-rolling-sales.csv from Kaggle.com. To find it, we went to Kaggle and searched for NYC prices.
+  Q3  We essentially emulated the code in the Welcome files, with substantial help from Salaj.
+  Q4  The class stored the Neighborhood, Address, and Price. We chose to store these three so that we could identify where the home was, and also so we could identify and compare the prices. 
+  Q5  ```ArrayList<Home> allHomes = ds.fetchList("Home", "NEIGHBORHOOD", "ADDRESS", "SALE PRICE");
+
+      Home minPrice = allHomes.get(0);
+      for ( Home home : allHomes ) {
+        if ( home.getPrice().length() > 2 && Long.parseLong( home.getPrice() ) < Long.parseLong( minPrice.getPrice() ) ) {
+          minPrice = home;
+        }
+      }
+      ```
+      We stored data involving Neighborhood, Address, and Sale Price. Then we sorted data based on what had the lowest price.
+      The first check in the if statement is to ensure that the price is at least 100 dollars, because as it turns out certain homes were sold for 0 dollars. We were informed that this is a way to avoid taxes, and so we avoided prices under 100 dollars.s
