@@ -1,0 +1,25 @@
+Team ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+LAB08 -- America's Next Top Data Scientist
+2022-04-05
+time spent: 1.5 hrs (personal) + 1 hrs (class)
+
+
+DISCO
+0. -d
+1. man (USE IT MORE)
+
+QCC
+0. What exactly does `:` do?? All we remember is that its a separator :(
+
+
+Ruawatrain's CSV FLOW:
+04-06 -- Salaj helped a lot in doing the CSV stuffs. We essentially found a CSV on Kaggle, downloaded it... and did it??
+Originally there were some issues in converting Strings to ints, however we skipped this by leaving the data as Strings and only converting to ints when we wanted to use it.
+Additionally, ints couldn't fit the 2,100,000 dollar home, so we ended up using longs.
+The main issues were in that some of the cost sections were -, and also tax evasion plots. Thus, we ignored any price with less than 3 characters.
+
+TRUBZ
+Converting String to int
+Using long instead of int
+Salaj helped with most of the trubz.
