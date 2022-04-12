@@ -1,19 +1,24 @@
 import java.util.ArrayList;
+public class ALQueue<QUASAR> implements Queue<QUASAR> {
 
-public class ALQ<QUASAR> implements Queue<QUASAR> {
   private ArrayList<QUASAR> _data;
-  private int _countRemoved;
+  private int _removed;
 
-  public ALQ() {
+  public ALQueue() {
     _data = new ArrayList<QUASAR>();
-    _countRemoved = 0;
+    _removed = 0;
   }
-
   //means of removing an element from collection:
   //Dequeues and returns the first element of the queue.
   public QUASAR dequeue() {
-    _countRemoved++;
-    return _data.remove(_countRemoved - 1);
+    if (isEmpty()){
+
+      System.out.println("Array is already empty, stupid.");
+      throw new IndexOutOfBoundsException();
+
+    }
+    _removed++;
+    return _data.set(_removed - 1, null);
   }
 
   //means of adding an element to collection:
@@ -24,12 +29,12 @@ public class ALQ<QUASAR> implements Queue<QUASAR> {
 
   //Returns true if this queue is empty, otherwise returns false.
   public boolean isEmpty() {
-    return _data.size() - _countRemoved == 0;
+    return _data.size() - _removed == 0;
   }
 
   //Returns the first element of the queue without dequeuing it.
   public QUASAR peekFront() {
-    return _data.get(_countRemoved);
+    return _data.get(_removed);
   }
 
   public String toString() {
@@ -37,11 +42,21 @@ public class ALQ<QUASAR> implements Queue<QUASAR> {
   }
 
   public static void main(String[] args) {
-    ALQ<String> ruawatrain = new ALQ<String>();
+
+    ALQueue<String> ruawatrain = new ALQueue<String>();
     System.out.println(ruawatrain.isEmpty());
     ruawatrain.enqueue("Josiah");
     ruawatrain.enqueue("David");
     ruawatrain.enqueue("Ben");
     System.out.println(ruawatrain);
+    System.out.println(ruawatrain.isEmpty());
+    ruawatrain.dequeue();
+    ruawatrain.dequeue();
+    ruawatrain.dequeue();
+    System.out.println(ruawatrain);
+    System.out.println(ruawatrain.isEmpty());
+    ruawatrain.dequeue();
+
   }
+
 }
