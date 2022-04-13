@@ -1,0 +1,12 @@
+ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW90 -- Swabbing the Deque
+2022-04-12
+time spent: 1 hrs
+
+DISCO
+Nearly every method in Deque appears in LinkedList, making pass through functionality very VERY easy
+What we thought would be hard turned out to be very easy bc of above disco, thus our readme file isn't SUPER accurate.
+
+QCC
+Why were there so many seemingly redundant methods in the Deque interface??
