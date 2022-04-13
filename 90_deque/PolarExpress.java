@@ -1,11 +1,17 @@
+// ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+// APCS pd6
+// HW90 -- Swabbing the Deque
+// 2022-04-12
+// time spent: 1 hrs
+
 import java.util.LinkedList;
 import java.util.Iterator;
 import java.util.Collection;
 
-public class YourImplementationOfDeque<T> implements Deque<T>{
+public class PolarExpress<T> implements Deque<T>{
   private LinkedList<T> _data;  // LINKED LIST PASS THROUGH FUNCTIONALITY IS BEAUTIFUL
 
-  public YourImplementationOfDeque() {
+  public PolarExpress() {
     _data = new LinkedList<T>();
   }
 

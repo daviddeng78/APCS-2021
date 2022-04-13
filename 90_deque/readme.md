@@ -1,4 +1,11 @@
-## PLAN!!!
+# HEADER
+ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz \
+APCS pd6 \
+HW90 -- Swabbing the Deque \
+2022-04-12 \
+time spent: 1 hrs \
+
+## ORIGINAL PLAN!!!
 * int 	size() \
   Returns the number of elements in this deque.
 * void 	addFirst​(E e) \
@@ -25,3 +32,9 @@
   Returns an iterator over the elements in this deque in reverse sequential order.
 * boolean 	removeLastOccurrence​(Object o)  SEEMS HARD \
   Removes the last occurrence of the specified element from this deque.
+
+## REVISED PLAN
+* We hold these Truths to be self-evident, that all Methods are created equal. Everything is pass-through.
+
+## DESIGN DECISIONS
+*

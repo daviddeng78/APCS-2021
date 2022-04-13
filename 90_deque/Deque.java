@@ -1,3 +1,9 @@
+// ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+// APCS pd6
+// HW90 -- Swabbing the Deque
+// 2022-04-12
+// time spent: 1 hrs
+
 import java.util.Iterator;
 import java.util.Collection;
 
