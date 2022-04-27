@@ -1,0 +1,31 @@
+Ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+L09 -- Some Folks Call It A Charades
+2022-04-26
+time spent: 1.3 hrs
+
+DISCO
+0. In git-flavored md you can make a second-level bullet point with <tab> *
+1. Appending an & at the end of a terminal command allows you to continue using the terminal after running the command (used for evince)
+2. processClues should be private because allowing it to be called would return pre-used clues to the top of the clues list.
+3. What @Override is
+
+QCC
+0. Wow that lab was so out of order. They were referencing different sections throughout the lab and GUI was everywhere.
+
+COBO Qs
+Play method -
+  Play needs to fill the ArrayList with potential Celebrities
+  Then it needs to cycle through these celebrities allowing the player to guess
+  Once the player guesses correctly move to the next
+  Once there are no more celebrities, exit the method.
+
+What methods should be in the Celebrity class -
+  isEmpty, addCelebrity, checkAnswer, changeCelebrity, isWon
+
+Alternative constructor -
+  Code Sketch: instead of having the play method collect the celebrities, have this done in the constructor
+
+Attributes of Celebrity types -
+  Type of Celebrity: Academic
+  String Field of Study
