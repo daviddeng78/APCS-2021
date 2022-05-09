@@ -1,0 +1,92 @@
+Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW94 --  reverse engineering
+2022-05-09
+time spent: 1 hrs
+
+
+
+DISCO
+------------------------------------------------
+* Catalan numbers WOAHAHAHA
+================================================
+
+
+QCC
+------------------------------------------------
+* Pre order and post order why dont it determine stuff?
+================================================
+
+
+HOW KEEN ARE YOUR POWERS OF OBSERVATION?
+------------------------------------------------
+Q: For a given binary tree, how many unique pre-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique in-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique post-order traversals are there?
+A: 1
+
+Q: For a given traversal, how many unique trees could have produced it?
+A: Q: For a given traversal, how many unique trees could have produced it?
+A: First lets assume PRE-ORDER traversal is in use
+   Now we can say that f(n) is the number of trees that could correspond to a traversal of length n
+   A traversal of length 0 determines 1 tree (the non-tree (it just kept giving!))
+   A traversal of length 1 determines 1 tree
+   A traversal of length 2 determines 2 trees (root and then node to the left or right)
+   Now lets try and figure out 3, with the traversal 1,2,3
+   Pre-order traversal looks like ROOT-LEFT-RIGHT. Thus 1 is the ROOT.
+   Lets say that the LEFT traversal is empty, making the RIGHT traversal 2,3. There are f(0)f(2) trees determined by this
+   If the LEFT is 1 and the RIGHT is 2, there are f(1)f(1) trees
+   If the LEFT is 1,2 and the RIGHT is empty, there are f(2)f(0) trees
+   In total f(3)=f(0)f(2)+f(1)f(1)+f(2)f(0)=1(2)+1(1)+2(1)=5
+   In general, we can continue this strategy of break up the cases to get
+           f(n)=f(0)f(n-1)+f(1)f(n-2)+...+f(n-2)f(1)+f(n-1)f(0)
+    All other traversals work out identically.
+
+Q: Given a pre-order traversal, what can you infer about its tree?
+A: the first node in the traversal is the root. 
+
+Q: Given a post-order traversal, what can you infer about its tree?
+A: the last node in the traversal is the root. 
+
+Q: What does "1-to-1" mean?
+A: Every input has a unique output.
+
+Q: What does "onto" mean?
+A: If a function maps A onto B, if for a in A, B is the set {f(a)}
+
+================================================
+
+
+ALGO for pre order and in order reforestation
+------------------------------------------------
+givens: pre order and in order traversal
+
+procedure:
+
+Given the preorder traversal ROOT,STUFF and the inorder traversal LEFT,ROOT,RIGHT
+We instantly know the root.
+Now we can split STUFF into a two parts, STUFF-LEFT and STUFF-RIGHT so that STUFF-LEFT is a re-ordering of LEFT, and STUFF-RIGHT is a re-ordering of RIGHT.
+STUFF-LEFT is the preorder traversal of the left branch, LEFT is the inorder traversal of the left branch. We can recursively continue to divine what the LEFT branch looks like since the length of STUFF-LEFT and LEFT is strictly decreasing (thus the process must terminate).
+Repeating this for STUFF-RIGHT and RIGHT we can divine the looks of the right branch.
+This plus the node is the entire tree.
+
+ALGO for postorder and inorder reforestation
+------------------------------------------------
+givens: postorder and inorder traversals.
+
+procedure:
+
+Given the preorder traversal STUFF,ROOT and the inorder traversal LEFT,ROOT,RIGHT
+We instantly know the root.
+Now we can split STUFF into a two parts, STUFF-LEFT and STUFF-RIGHT so that STUFF-LEFT is a re-ordering of LEFT, and STUFF-RIGHT is a re-ordering of RIGHT.
+STUFF-LEFT is the preorder traversal of the left branch, LEFT is the inorder traversal of the left branch. We can recursively continue to divine what the LEFT branch looks like since the length of STUFF-LEFT and LEFT is strictly decreasing (thus the process must terminate).
+Repeating this for STUFF-RIGHT and RIGHT we can divine the looks of the right branch.
+This plus the node is the entire tree.
+================================================
+(replicate the algo section above as many times as necessary for distinct algos)
+
+
