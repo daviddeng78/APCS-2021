@@ -1,0 +1,14 @@
+Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW95 --  Algorithm as Data Structure
+2022-05-09
+time spent: 1 hrs
+
+With L = level, d = depth, h = height
+h+d is constant? h+L is constant?? (not totally sure)
+
+1. a perfect binary tree has 2^(h+1)-1 nodes from the root.
+2. at each level, a perfect binary tree has 2^d nodes
+3. height of a complete binary tree w/ n nodes is roughly floor(log2(n)).
+   We dedicate one node to be the root, and split the remaining n-1 nodes roughly equally between the left and right
+   Thus the final height is how many splits we make in total, which is a bit less than log2(n)
