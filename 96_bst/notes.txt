@@ -1,0 +1,11 @@
+Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW96 --  BSTs is the Perfect Place for Shade
+2022-05-10
+time spent: .5 hrs
+
+DISCO
+0. 93 is prime
+1. Our basecase for height is when the TreeNode is null. We originally thought it would be if the node is a leaf.
+QCC
+0. Could we have some time in class to go over the notes.txt file from 95_bst? Didn't get very satisfying answers.
