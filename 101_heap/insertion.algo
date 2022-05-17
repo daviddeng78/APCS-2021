@@ -1,0 +1,20 @@
+Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW101 --  Heap o'Trouble
+2022-05-16
+time spent: .7 hrs
+
+
+To insert a node with value newVal:
+  Base case -- heap does not exist (it is null)
+    - make newVal the root
+  If the heap exists
+    - set the heap's root to currNode.
+  Base case -- currNode is a leaf that is LESS than newVal
+    - insert newVal as a left branch
+  Base case -- currNode a node that is GREATER than newVal
+    - make a new heap rooted at newVal with left branch equal to the node we are at. Replace this node with the new heaps
+  If not at a base case and the left child-node of currNode is smaller than newVal or null
+    - set the left child-node to currNode and repeat the algo
+  If the left child-node of currNode is not smaller than newVal
+    - set currNode to the right child-node of currNode and repeat the algo

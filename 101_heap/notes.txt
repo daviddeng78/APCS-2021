@@ -1,0 +1,35 @@
+Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW101 --  Heap o'Trouble
+2022-05-16
+time spent: .7 hrs
+
+DISCO
+0. Insertion and removal are pretty similar to that of BST (but remove is more different)
+
+QCC
+0. Remove was harder than we thought (TJM thought the algo was scummy because it just adds the elements in one at a time which kinda sucks)
+1. We still don't like heap :(
+2. WHAT IS IT GOOD FOOOOOR :(((( Its sort of ok for returning the minimum of a dataset... but we could just run a min check instead of... this
+
+HAVE CAT
+|\_/|          ))
+|._.|_________//
+ \            )
+  | ||----| ||
+  | ||    | ||
+
+TRF's LCT (very useful, for personal note purposes)
+
+A HEAP is a rooted tree satisfying the heap property:
+   If A is a parent node of B then A's key is ordered with B's key (with same ordering applying across the tree)
+There are two flavors of heaps: min heaps and max heaps:
+   A min heap maintains the heap invarient that all of the children of any node are greater than the parent node.
+   A max heap maintains the heap invarient that all of the children of any node are less than the parent node.
+
+//min heap example:                   //max heap example:
+    3                                      57
+   / \                                    / \
+  5   7                                  36 45
+ / \   \                                /   / \
+23  25  49                             1   5   9

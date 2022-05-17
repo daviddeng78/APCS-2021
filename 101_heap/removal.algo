@@ -1,0 +1,33 @@
+Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW101 --  Heap o'Trouble
+2022-05-16
+time spent: .7 hrs
+
+To remove a node with value newVal: SCUMMY - TJM
+  Preform searching algo to find node with value newVal, set this node to currNode
+  Base case -- currNode is null
+    - exit algo
+  Base case -- currNode has no children
+    - set currNode to null and exit
+  Base case -- currNode has one child
+    - set currNode equal to its child and exit
+  If not at a base case
+    - store the sub-branch with the largest root as tmp
+    - set currNode equal to the sub-branch with the smallest root
+    - traverse down tmp and insert every node in tmp to the original heap
+    - exit
+
+
+To return a node in the heap with value newVal:
+  Set currNode equal to the root of the heap
+  Base case -- currNode is null
+    - return null
+  Base case -- currNode has value larger than newVal
+    - return null
+  Base case -- currNode has value equal to newVal
+    - return currNode
+  If not at a base case
+    - run the search algorithm on the right and left sub-branches of currNode
+    - if possible, return the non-null value returned by these two calls
+    - if both null, return null
