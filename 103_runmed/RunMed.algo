@@ -1,0 +1,27 @@
+Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW103 -- Erica's Friends, Hugo, and The One in the Middle
+2022-05-17
+time spent: 1.5 hrs
+
+Insert the first element into maxHeap
+For inserting newVal
+If item newVal > root of maxHeap, insert it into minHeap
+If otherwise, insert it into maxHeap
+Balance the two trees if necessary (difference of height >= 2)
+If number of elements is odd, take root of maxHeap
+if not, average min and max
+
+To get the median
+If there are an even number of elements, average the two roots
+Otherwise, take the root of the tree with the largest number of elements
+
+NOTES
+
+MAX
+median
+smaller stuff
+
+MIN
+median
+larger stuff
